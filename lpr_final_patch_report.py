@@ -1,14 +1,11 @@
 import re, sys
 
-# Commands to run
-    # show lldp neighbot
-    # show int des | i nac-
-#Regex
-    # hostname of dest regex  \w{3}.+\.net|\w{5}\-\S+    needs to strip out the .net
-    # reges to grag source interface  (Gi|Te|Fa|Twe|Fi|Hu)\S+     Gi\S+|Te\S+|Fa\S+|Fi\S+|Twe\S+|Hu\S+
-    # regex to grab destination interface  \S+\n|\S+$
+
+#If NAC is on the switch you will need to know the model number
+
 # Use this online complier https://www.onlinegdb.com/online_python_compiler
-#nacs we need to know the model number
+
+
 def ask_y_or_n(question):
   while True:
     answer = input(question + " (Y/N): ").upper()
