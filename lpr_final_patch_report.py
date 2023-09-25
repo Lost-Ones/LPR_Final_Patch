@@ -11,7 +11,7 @@ def ask_y_or_n(question):
     answer = input(question + " (Y/N): ").upper()
     if answer == "Y":
       return True
-    elif answer == "Y":
+    elif answer == "N":
       return False
     else:
       print("Invalid answer. Please enter Y or N.")
@@ -37,7 +37,8 @@ def main():
     return lines
 
 if __name__ == "__main__":
-    print('''\nThis script will assist with creating a CSV that can leter be used to getpopulate the data in Excel format to be used in the Spreadsheet for creating the cable labels.
+    print('''\nThis script will assist with creating a CSV that can later be used to populate the data in Excel format to be used in the Spreadsheet for creating the cable labels.\n
+            Use NetBrain to run the commands and paste in the output to this script. 
          ''')
     commands = ['show lldp neighbor','show int description | i nac-  ( Only if NAC is on the switch)']
     hostname = input("\nEnter the hostname of the switch: ")
@@ -115,4 +116,6 @@ if __name__ == "__main__":
                 try:
                     print(f'{hostname}, {source_interface[0]}, , , , , ,{destination_interface}, {destination_hostname}')
                 except:
-                    print(f'Error in line: {line}')
+                    print(f'Error in line: {line}'
+
+    pause = input('Hit any key to close...')
