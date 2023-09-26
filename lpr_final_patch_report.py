@@ -37,6 +37,17 @@ def main():
     return lines
 
 if __name__ == "__main__":
+    print('''\n
+
+##############################################################################
+        ############################################################
+
+               DONT NOT paste in any password into the script. 
+               
+        ############################################################
+##############################################################################
+
+''')
     print('''\nThis script will assist with creating a CSV that can later be used to populate the data in Excel format to be used in the Spreadsheet for creating the cable labels.\n
             Use NetBrain to run the commands and paste in the output to this script. 
          ''')
