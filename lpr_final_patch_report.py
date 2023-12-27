@@ -127,6 +127,6 @@ if __name__ == "__main__":
                 try:
                     print(f'{hostname}, {source_interface[0]}, , , , , ,{destination_interface}, {destination_hostname}')
                 except:
-                    print(f'Error in line: {line}'
+                    print(f'Error in line: {line}')
 
     pause = input('Hit any key to close...')
