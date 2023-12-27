@@ -86,13 +86,16 @@ if __name__ == "__main__":
     destination_interfaces = []
     print('Hostname, Port, Cable Number Patchpannel Name, Room No, Rack Unit, Port Floor Tank Rumber, Hostname')
     for line in lldp_text:
-        destination_hostname = re.findall('\w{3}.+\.net|\w{5}\-\S+', line)
+        destination_hostname = re.findall('\w{3}\d{2}\-ap\-\d{1,3}\-\d{1,3}|\w{3}.+\.net|\w{5}\-\S+', line)
+        #print(destination_hostname)
         if destination_hostname:
             destination_hostname = destination_hostname[0].replace('.net', '')
         source_interface = re.findall('Gi\S+|Te\S+|Fa\S+|Fi\S+|Twe\S+|Hu\S+', line)
         destination_interface = re.findall('\S+\n|\S+$', line)
         is_mac_address = re.findall('\w{4}\.\w{4}\.\w{4}', line)
-        if destination_hostname and not is_mac_address:
+        if destination_hostname:
+            if is_mac_address:
+                destination_interface = ['N/A']
             try:
                 print(f'{hostname}, {source_interface[0]}, , , , , ,{destination_interface[0]}, {destination_hostname}')
             except:
